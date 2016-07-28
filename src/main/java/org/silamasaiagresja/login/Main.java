@@ -29,7 +29,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try  {
 			connection = DatabaseConnector.checkConnectionWithDB();
-			connection.prepareStatement("SELECT login, haslo FROM Uzytkownicy");
+			//connection.prepareStatement("SELECT login, haslo FROM Uzytkownicy");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

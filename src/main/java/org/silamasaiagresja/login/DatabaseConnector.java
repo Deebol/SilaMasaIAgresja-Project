@@ -23,6 +23,7 @@ public class DatabaseConnector {
 			cpds = new ComboPooledDataSource();
 			cpds.setDriverClass("org.sqlite.JDBC");
 			cpds.setJdbcUrl("jdbc:sqlite:" + dataBasePath);
+			System.out.println(dataBasePath);
 		} catch (PropertyVetoException e) {
 			e.printStackTrace();
 		}
@@ -30,6 +31,7 @@ public class DatabaseConnector {
 	}
 
 	public static Connection checkConnectionWithDB() throws SQLException  {
+		//System.out.println(DATA_SOURCE.toString());
 		if (new File(dataBasePath).exists() && DATA_SOURCE != null) {
 			Connection conn = DATA_SOURCE.getConnection();
 			DB_CONNECTION_STATUS.setText("Połączono z bazą danych");
